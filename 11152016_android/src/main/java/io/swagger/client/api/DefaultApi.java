@@ -36,6 +36,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import io.swagger.client.model.InlineResponse2002;
+import io.swagger.client.model.InlineResponse2003;
 import io.swagger.client.model.InlineResponse2001;
 import io.swagger.client.model.InlineResponse200;
 
@@ -71,22 +72,22 @@ public class DefaultApi {
 
   /**
   * 
-  * Returns the driving and position state of the vehicle.
+  * Returns the current temperature and climate control state.
    * @param id The ID number of the car
    * @return InlineResponse2002
   */
-  public InlineResponse2002 driveState (String id) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public InlineResponse2002 climateState (String id) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
      Object postBody = null;
   
       // verify the required parameter 'id' is set
       if (id == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling driveState",
-      new ApiException(400, "Missing the required parameter 'id' when calling driveState"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling climateState",
+      new ApiException(400, "Missing the required parameter 'id' when calling climateState"));
       }
   
 
   // create path and map variables
-  String path = "/vehicles/{id}/data_request/drive_state".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
+  String path = "/vehicles/{id}/data_request/climate_state".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
 
   // query params
   List<Pair> queryParams = new ArrayList<Pair>();
@@ -141,10 +142,147 @@ public class DefaultApi {
 
       /**
    * 
+   * Returns the current temperature and climate control state.
+   * @param id The ID number of the car
+  */
+  public void climateState (String id, final Response.Listener<InlineResponse2002> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+  
+    // verify the required parameter 'id' is set
+    if (id == null) {
+       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling climateState",
+         new ApiException(400, "Missing the required parameter 'id' when calling climateState"));
+    }
+    
+
+    // create path and map variables
+    String path = "/vehicles/{id}/data_request/climate_state".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+      String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((InlineResponse2002) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2002.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * 
+  * Returns the driving and position state of the vehicle.
+   * @param id The ID number of the car
+   * @return InlineResponse2003
+  */
+  public InlineResponse2003 driveState (String id) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+     Object postBody = null;
+  
+      // verify the required parameter 'id' is set
+      if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling driveState",
+      new ApiException(400, "Missing the required parameter 'id' when calling driveState"));
+      }
+  
+
+  // create path and map variables
+  String path = "/vehicles/{id}/data_request/drive_state".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
+
+  // query params
+  List<Pair> queryParams = new ArrayList<Pair>();
+      // header params
+      Map<String, String> headerParams = new HashMap<String, String>();
+      // form params
+      Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+      String[] contentTypes = {
+  
+      };
+      String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+      if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+  
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+      } else {
+      // normal form params
+        }
+
+      String[] authNames = new String[] {  };
+
+      try {
+        String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+        if(localVarResponse != null){
+           return (InlineResponse2003) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2003.class);
+        } else {
+           return null;
+        }
+      } catch (ApiException ex) {
+         throw ex;
+      } catch (InterruptedException ex) {
+         throw ex;
+      } catch (ExecutionException ex) {
+         if(ex.getCause() instanceof VolleyError) {
+	    VolleyError volleyError = (VolleyError)ex.getCause();
+	    if (volleyError.networkResponse != null) {
+	       throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+	    }
+         }
+         throw ex;
+      } catch (TimeoutException ex) {
+         throw ex;
+      }
+  }
+
+      /**
+   * 
    * Returns the driving and position state of the vehicle.
    * @param id The ID number of the car
   */
-  public void driveState (String id, final Response.Listener<InlineResponse2002> responseListener, final Response.ErrorListener errorListener) {
+  public void driveState (String id, final Response.Listener<InlineResponse2003> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
   
@@ -191,7 +329,7 @@ public class DefaultApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2002) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2002.class));
+              responseListener.onResponse((InlineResponse2003) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2003.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

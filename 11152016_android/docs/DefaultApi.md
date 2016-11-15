@@ -4,14 +4,58 @@ All URIs are relative to *https://virtserver.swaggerhub.com/fbmattos/Tesla-Demo/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**climateState**](DefaultApi.md#climateState) | **GET** /vehicles/{id}/data_request/climate_state | 
 [**driveState**](DefaultApi.md#driveState) | **GET** /vehicles/{id}/data_request/drive_state | 
 [**setTemps**](DefaultApi.md#setTemps) | **POST** /vehicles/{id}/command/set_temps | 
 [**vehicleGet**](DefaultApi.md#vehicleGet) | **GET** /vehicle | 
 
 
+<a name="climateState"></a>
+# **climateState**
+> InlineResponse2002 climateState(id)
+
+
+
+Returns the current temperature and climate control state.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.api.DefaultApi;
+
+DefaultApi apiInstance = new DefaultApi();
+String id = "id_example"; // String | The ID number of the car
+try {
+    InlineResponse2002 result = apiInstance.climateState(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#climateState");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The ID number of the car |
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="driveState"></a>
 # **driveState**
-> InlineResponse2002 driveState(id)
+> InlineResponse2003 driveState(id)
 
 
 
@@ -25,7 +69,7 @@ Returns the driving and position state of the vehicle.
 DefaultApi apiInstance = new DefaultApi();
 String id = "id_example"; // String | The ID number of the car
 try {
-    InlineResponse2002 result = apiInstance.driveState(id);
+    InlineResponse2003 result = apiInstance.driveState(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#driveState");
@@ -41,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

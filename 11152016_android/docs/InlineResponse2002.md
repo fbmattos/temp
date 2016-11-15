@@ -4,11 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shiftState** | **String** |  |  [optional]
-**heading** | **Integer** | integer compass heading |  [optional]
-**latitude** | **Double** | degrees north of equator |  [optional]
-**speed** | **Double** |  |  [optional]
-**longitude** | **Double** | degrees west of the prime meridian |  [optional]
+**driverTempSetting** | **Double** | degC of driver temperature setpoint |  [optional]
+**isRearDefrosterOn** | **Boolean** |  |  [optional]
+**isAutoConditioningOn** | **Boolean** |  |  [optional]
+**outsideTemp** | **Double** | degC outside car or null |  [optional]
+**insideTemp** | **Double** | degC inside car |  [optional]
+**passengerTempSetting** | **Double** | degC of passenger temperature setpoint |  [optional]
+**fanStatus** | **Integer** | fan speed 0-6 or null |  [optional]
+**isFrontDefrosterOn** | **Boolean** |  |  [optional]
 
 
 

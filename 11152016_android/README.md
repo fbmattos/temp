@@ -66,10 +66,10 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String id = "id_example"; // String | The ID number of the car
         try {
-            InlineResponse2002 result = apiInstance.driveState(id);
+            InlineResponse2002 result = apiInstance.climateState(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#driveState");
+            System.err.println("Exception when calling DefaultApi#climateState");
             e.printStackTrace();
         }
     }
@@ -83,6 +83,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/fbmattos/Tesla-Demo/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**climateState**](docs/DefaultApi.md#climateState) | **GET** /vehicles/{id}/data_request/climate_state | 
 *DefaultApi* | [**driveState**](docs/DefaultApi.md#driveState) | **GET** /vehicles/{id}/data_request/drive_state | 
 *DefaultApi* | [**setTemps**](docs/DefaultApi.md#setTemps) | **POST** /vehicles/{id}/command/set_temps | 
 *DefaultApi* | [**vehicleGet**](docs/DefaultApi.md#vehicleGet) | **GET** /vehicle | 
@@ -93,6 +94,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
+ - [InlineResponse2003](docs/InlineResponse2003.md)
 
 
 ## Documentation for Authorization

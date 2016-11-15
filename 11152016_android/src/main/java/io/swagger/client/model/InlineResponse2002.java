@@ -32,70 +32,106 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class InlineResponse2002  {
   
-  @SerializedName("shift_state")
-  private String shiftState = null;
-  @SerializedName("heading")
-  private Integer heading = null;
-  @SerializedName("latitude")
-  private Double latitude = null;
-  @SerializedName("speed")
-  private Double speed = null;
-  @SerializedName("longitude")
-  private Double longitude = null;
+  @SerializedName("driver_temp_setting")
+  private Double driverTempSetting = null;
+  @SerializedName("is_rear_defroster_on")
+  private Boolean isRearDefrosterOn = null;
+  @SerializedName("is_auto_conditioning_on")
+  private Boolean isAutoConditioningOn = null;
+  @SerializedName("outside_temp")
+  private Double outsideTemp = null;
+  @SerializedName("inside_temp")
+  private Double insideTemp = null;
+  @SerializedName("passenger_temp_setting")
+  private Double passengerTempSetting = null;
+  @SerializedName("fan_status")
+  private Integer fanStatus = null;
+  @SerializedName("is_front_defroster_on")
+  private Boolean isFrontDefrosterOn = null;
 
   /**
+   * degC of driver temperature setpoint
    **/
-  @ApiModelProperty(value = "")
-  public String getShiftState() {
-    return shiftState;
+  @ApiModelProperty(value = "degC of driver temperature setpoint")
+  public Double getDriverTempSetting() {
+    return driverTempSetting;
   }
-  public void setShiftState(String shiftState) {
-    this.shiftState = shiftState;
-  }
-
-  /**
-   * integer compass heading
-   * minimum: 0.0
-   * maximum: 359.0
-   **/
-  @ApiModelProperty(value = "integer compass heading")
-  public Integer getHeading() {
-    return heading;
-  }
-  public void setHeading(Integer heading) {
-    this.heading = heading;
-  }
-
-  /**
-   * degrees north of equator
-   **/
-  @ApiModelProperty(value = "degrees north of equator")
-  public Double getLatitude() {
-    return latitude;
-  }
-  public void setLatitude(Double latitude) {
-    this.latitude = latitude;
+  public void setDriverTempSetting(Double driverTempSetting) {
+    this.driverTempSetting = driverTempSetting;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public Double getSpeed() {
-    return speed;
+  public Boolean getIsRearDefrosterOn() {
+    return isRearDefrosterOn;
   }
-  public void setSpeed(Double speed) {
-    this.speed = speed;
+  public void setIsRearDefrosterOn(Boolean isRearDefrosterOn) {
+    this.isRearDefrosterOn = isRearDefrosterOn;
   }
 
   /**
-   * degrees west of the prime meridian
    **/
-  @ApiModelProperty(value = "degrees west of the prime meridian")
-  public Double getLongitude() {
-    return longitude;
+  @ApiModelProperty(value = "")
+  public Boolean getIsAutoConditioningOn() {
+    return isAutoConditioningOn;
   }
-  public void setLongitude(Double longitude) {
-    this.longitude = longitude;
+  public void setIsAutoConditioningOn(Boolean isAutoConditioningOn) {
+    this.isAutoConditioningOn = isAutoConditioningOn;
+  }
+
+  /**
+   * degC outside car or null
+   **/
+  @ApiModelProperty(value = "degC outside car or null")
+  public Double getOutsideTemp() {
+    return outsideTemp;
+  }
+  public void setOutsideTemp(Double outsideTemp) {
+    this.outsideTemp = outsideTemp;
+  }
+
+  /**
+   * degC inside car
+   **/
+  @ApiModelProperty(value = "degC inside car")
+  public Double getInsideTemp() {
+    return insideTemp;
+  }
+  public void setInsideTemp(Double insideTemp) {
+    this.insideTemp = insideTemp;
+  }
+
+  /**
+   * degC of passenger temperature setpoint
+   **/
+  @ApiModelProperty(value = "degC of passenger temperature setpoint")
+  public Double getPassengerTempSetting() {
+    return passengerTempSetting;
+  }
+  public void setPassengerTempSetting(Double passengerTempSetting) {
+    this.passengerTempSetting = passengerTempSetting;
+  }
+
+  /**
+   * fan speed 0-6 or null
+   **/
+  @ApiModelProperty(value = "fan speed 0-6 or null")
+  public Integer getFanStatus() {
+    return fanStatus;
+  }
+  public void setFanStatus(Integer fanStatus) {
+    this.fanStatus = fanStatus;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Boolean getIsFrontDefrosterOn() {
+    return isFrontDefrosterOn;
+  }
+  public void setIsFrontDefrosterOn(Boolean isFrontDefrosterOn) {
+    this.isFrontDefrosterOn = isFrontDefrosterOn;
   }
 
 
@@ -108,21 +144,27 @@ public class InlineResponse2002  {
       return false;
     }
     InlineResponse2002 inlineResponse2002 = (InlineResponse2002) o;
-    return (shiftState == null ? inlineResponse2002.shiftState == null : shiftState.equals(inlineResponse2002.shiftState)) &&
-        (heading == null ? inlineResponse2002.heading == null : heading.equals(inlineResponse2002.heading)) &&
-        (latitude == null ? inlineResponse2002.latitude == null : latitude.equals(inlineResponse2002.latitude)) &&
-        (speed == null ? inlineResponse2002.speed == null : speed.equals(inlineResponse2002.speed)) &&
-        (longitude == null ? inlineResponse2002.longitude == null : longitude.equals(inlineResponse2002.longitude));
+    return (driverTempSetting == null ? inlineResponse2002.driverTempSetting == null : driverTempSetting.equals(inlineResponse2002.driverTempSetting)) &&
+        (isRearDefrosterOn == null ? inlineResponse2002.isRearDefrosterOn == null : isRearDefrosterOn.equals(inlineResponse2002.isRearDefrosterOn)) &&
+        (isAutoConditioningOn == null ? inlineResponse2002.isAutoConditioningOn == null : isAutoConditioningOn.equals(inlineResponse2002.isAutoConditioningOn)) &&
+        (outsideTemp == null ? inlineResponse2002.outsideTemp == null : outsideTemp.equals(inlineResponse2002.outsideTemp)) &&
+        (insideTemp == null ? inlineResponse2002.insideTemp == null : insideTemp.equals(inlineResponse2002.insideTemp)) &&
+        (passengerTempSetting == null ? inlineResponse2002.passengerTempSetting == null : passengerTempSetting.equals(inlineResponse2002.passengerTempSetting)) &&
+        (fanStatus == null ? inlineResponse2002.fanStatus == null : fanStatus.equals(inlineResponse2002.fanStatus)) &&
+        (isFrontDefrosterOn == null ? inlineResponse2002.isFrontDefrosterOn == null : isFrontDefrosterOn.equals(inlineResponse2002.isFrontDefrosterOn));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (shiftState == null ? 0: shiftState.hashCode());
-    result = 31 * result + (heading == null ? 0: heading.hashCode());
-    result = 31 * result + (latitude == null ? 0: latitude.hashCode());
-    result = 31 * result + (speed == null ? 0: speed.hashCode());
-    result = 31 * result + (longitude == null ? 0: longitude.hashCode());
+    result = 31 * result + (driverTempSetting == null ? 0: driverTempSetting.hashCode());
+    result = 31 * result + (isRearDefrosterOn == null ? 0: isRearDefrosterOn.hashCode());
+    result = 31 * result + (isAutoConditioningOn == null ? 0: isAutoConditioningOn.hashCode());
+    result = 31 * result + (outsideTemp == null ? 0: outsideTemp.hashCode());
+    result = 31 * result + (insideTemp == null ? 0: insideTemp.hashCode());
+    result = 31 * result + (passengerTempSetting == null ? 0: passengerTempSetting.hashCode());
+    result = 31 * result + (fanStatus == null ? 0: fanStatus.hashCode());
+    result = 31 * result + (isFrontDefrosterOn == null ? 0: isFrontDefrosterOn.hashCode());
     return result;
   }
 
@@ -131,11 +173,14 @@ public class InlineResponse2002  {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2002 {\n");
     
-    sb.append("  shiftState: ").append(shiftState).append("\n");
-    sb.append("  heading: ").append(heading).append("\n");
-    sb.append("  latitude: ").append(latitude).append("\n");
-    sb.append("  speed: ").append(speed).append("\n");
-    sb.append("  longitude: ").append(longitude).append("\n");
+    sb.append("  driverTempSetting: ").append(driverTempSetting).append("\n");
+    sb.append("  isRearDefrosterOn: ").append(isRearDefrosterOn).append("\n");
+    sb.append("  isAutoConditioningOn: ").append(isAutoConditioningOn).append("\n");
+    sb.append("  outsideTemp: ").append(outsideTemp).append("\n");
+    sb.append("  insideTemp: ").append(insideTemp).append("\n");
+    sb.append("  passengerTempSetting: ").append(passengerTempSetting).append("\n");
+    sb.append("  fanStatus: ").append(fanStatus).append("\n");
+    sb.append("  isFrontDefrosterOn: ").append(isFrontDefrosterOn).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
