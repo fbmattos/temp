@@ -6,6 +6,10 @@ var url = require('url');
 var Default = require('./DefaultService');
 
 
+module.exports.climate_state = function climate_state (req, res, next) {
+  Default.climate_state(req.swagger.params, res, next);
+};
+
 module.exports.drive_state = function drive_state (req, res, next) {
   Default.drive_state(req.swagger.params, res, next);
 };

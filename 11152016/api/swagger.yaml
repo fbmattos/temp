@@ -46,6 +46,22 @@ paths:
           schema:
             $ref: "#/definitions/inline_response_200_1"
       x-swagger-router-controller: "Default"
+  /vehicles/{id}/data_request/climate_state:
+    get:
+      description: "Returns the current temperature and climate control state."
+      operationId: "climate_state"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID number of the car"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200_2"
+      x-swagger-router-controller: "Default"
   /vehicles/{id}/data_request/drive_state:
     get:
       description: "Returns the driving and position state of the vehicle."
@@ -60,7 +76,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200_2"
+            $ref: "#/definitions/inline_response_200_3"
       x-swagger-router-controller: "Default"
 definitions:
   inline_response_200_1:
@@ -86,6 +102,42 @@ definitions:
         type: "string"
         example: "1234567890"
   inline_response_200_2:
+    properties:
+      driver_temp_setting:
+        type: "number"
+        format: "double"
+        example: 22.6
+        description: "degC of driver temperature setpoint"
+      is_rear_defroster_on:
+        type: "boolean"
+        example: false
+      is_auto_conditioning_on:
+        type: "boolean"
+        example: false
+      outside_temp:
+        type: "number"
+        format: "double"
+        example: 9.5
+        description: "degC outside car or null"
+      inside_temp:
+        type: "number"
+        format: "double"
+        example: 17.0
+        description: "degC inside car"
+      passenger_temp_setting:
+        type: "number"
+        format: "double"
+        example: 22.6
+        description: "degC of passenger temperature setpoint"
+      fan_status:
+        type: "integer"
+        format: "int32"
+        example: 3
+        description: "fan speed 0-6 or null"
+      is_front_defroster_on:
+        type: "boolean"
+        example: false
+  inline_response_200_3:
     properties:
       shift_state:
         type: "string"
