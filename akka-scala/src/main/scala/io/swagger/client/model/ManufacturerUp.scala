@@ -10,11 +10,10 @@ import io.swagger.client.core.ApiModel
 import org.joda.time.DateTime
 
 
-case class InventoryItem (
-  id: UUID,
+case class ManufacturerUp (
   name: String,
-  releaseDate: String,
-  manufacturer: ManufacturerUp)
+  homePage: Option[String],
+  phone: Option[String])
    extends ApiModel
 
 
