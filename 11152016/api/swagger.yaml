@@ -65,7 +65,7 @@ paths:
   /vehicles/{id}/data_request/drive_state:
     get:
       description: "Returns the driving and position state of the vehicle."
-      operationId: "vehiclesIdData_requestDrive_stateGET"
+      operationId: "drive_state"
       parameters:
       - name: "id"
         in: "path"
