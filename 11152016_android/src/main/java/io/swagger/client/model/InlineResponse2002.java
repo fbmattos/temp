@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class InlineResponse2002  {
+public class InlineResponse2002 {
   
   @SerializedName("driver_temp_setting")
   private Double driverTempSetting = null;
@@ -144,27 +142,27 @@ public class InlineResponse2002  {
       return false;
     }
     InlineResponse2002 inlineResponse2002 = (InlineResponse2002) o;
-    return (driverTempSetting == null ? inlineResponse2002.driverTempSetting == null : driverTempSetting.equals(inlineResponse2002.driverTempSetting)) &&
-        (isRearDefrosterOn == null ? inlineResponse2002.isRearDefrosterOn == null : isRearDefrosterOn.equals(inlineResponse2002.isRearDefrosterOn)) &&
-        (isAutoConditioningOn == null ? inlineResponse2002.isAutoConditioningOn == null : isAutoConditioningOn.equals(inlineResponse2002.isAutoConditioningOn)) &&
-        (outsideTemp == null ? inlineResponse2002.outsideTemp == null : outsideTemp.equals(inlineResponse2002.outsideTemp)) &&
-        (insideTemp == null ? inlineResponse2002.insideTemp == null : insideTemp.equals(inlineResponse2002.insideTemp)) &&
-        (passengerTempSetting == null ? inlineResponse2002.passengerTempSetting == null : passengerTempSetting.equals(inlineResponse2002.passengerTempSetting)) &&
-        (fanStatus == null ? inlineResponse2002.fanStatus == null : fanStatus.equals(inlineResponse2002.fanStatus)) &&
-        (isFrontDefrosterOn == null ? inlineResponse2002.isFrontDefrosterOn == null : isFrontDefrosterOn.equals(inlineResponse2002.isFrontDefrosterOn));
+    return (this.driverTempSetting == null ? inlineResponse2002.driverTempSetting == null : this.driverTempSetting.equals(inlineResponse2002.driverTempSetting)) &&
+        (this.isRearDefrosterOn == null ? inlineResponse2002.isRearDefrosterOn == null : this.isRearDefrosterOn.equals(inlineResponse2002.isRearDefrosterOn)) &&
+        (this.isAutoConditioningOn == null ? inlineResponse2002.isAutoConditioningOn == null : this.isAutoConditioningOn.equals(inlineResponse2002.isAutoConditioningOn)) &&
+        (this.outsideTemp == null ? inlineResponse2002.outsideTemp == null : this.outsideTemp.equals(inlineResponse2002.outsideTemp)) &&
+        (this.insideTemp == null ? inlineResponse2002.insideTemp == null : this.insideTemp.equals(inlineResponse2002.insideTemp)) &&
+        (this.passengerTempSetting == null ? inlineResponse2002.passengerTempSetting == null : this.passengerTempSetting.equals(inlineResponse2002.passengerTempSetting)) &&
+        (this.fanStatus == null ? inlineResponse2002.fanStatus == null : this.fanStatus.equals(inlineResponse2002.fanStatus)) &&
+        (this.isFrontDefrosterOn == null ? inlineResponse2002.isFrontDefrosterOn == null : this.isFrontDefrosterOn.equals(inlineResponse2002.isFrontDefrosterOn));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (driverTempSetting == null ? 0: driverTempSetting.hashCode());
-    result = 31 * result + (isRearDefrosterOn == null ? 0: isRearDefrosterOn.hashCode());
-    result = 31 * result + (isAutoConditioningOn == null ? 0: isAutoConditioningOn.hashCode());
-    result = 31 * result + (outsideTemp == null ? 0: outsideTemp.hashCode());
-    result = 31 * result + (insideTemp == null ? 0: insideTemp.hashCode());
-    result = 31 * result + (passengerTempSetting == null ? 0: passengerTempSetting.hashCode());
-    result = 31 * result + (fanStatus == null ? 0: fanStatus.hashCode());
-    result = 31 * result + (isFrontDefrosterOn == null ? 0: isFrontDefrosterOn.hashCode());
+    result = 31 * result + (this.driverTempSetting == null ? 0: this.driverTempSetting.hashCode());
+    result = 31 * result + (this.isRearDefrosterOn == null ? 0: this.isRearDefrosterOn.hashCode());
+    result = 31 * result + (this.isAutoConditioningOn == null ? 0: this.isAutoConditioningOn.hashCode());
+    result = 31 * result + (this.outsideTemp == null ? 0: this.outsideTemp.hashCode());
+    result = 31 * result + (this.insideTemp == null ? 0: this.insideTemp.hashCode());
+    result = 31 * result + (this.passengerTempSetting == null ? 0: this.passengerTempSetting.hashCode());
+    result = 31 * result + (this.fanStatus == null ? 0: this.fanStatus.hashCode());
+    result = 31 * result + (this.isFrontDefrosterOn == null ? 0: this.isFrontDefrosterOn.hashCode());
     return result;
   }
 

@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class InlineResponse2003  {
+public class InlineResponse2003 {
   
   @SerializedName("shift_state")
   private String shiftState = null;
@@ -108,21 +106,21 @@ public class InlineResponse2003  {
       return false;
     }
     InlineResponse2003 inlineResponse2003 = (InlineResponse2003) o;
-    return (shiftState == null ? inlineResponse2003.shiftState == null : shiftState.equals(inlineResponse2003.shiftState)) &&
-        (heading == null ? inlineResponse2003.heading == null : heading.equals(inlineResponse2003.heading)) &&
-        (latitude == null ? inlineResponse2003.latitude == null : latitude.equals(inlineResponse2003.latitude)) &&
-        (speed == null ? inlineResponse2003.speed == null : speed.equals(inlineResponse2003.speed)) &&
-        (longitude == null ? inlineResponse2003.longitude == null : longitude.equals(inlineResponse2003.longitude));
+    return (this.shiftState == null ? inlineResponse2003.shiftState == null : this.shiftState.equals(inlineResponse2003.shiftState)) &&
+        (this.heading == null ? inlineResponse2003.heading == null : this.heading.equals(inlineResponse2003.heading)) &&
+        (this.latitude == null ? inlineResponse2003.latitude == null : this.latitude.equals(inlineResponse2003.latitude)) &&
+        (this.speed == null ? inlineResponse2003.speed == null : this.speed.equals(inlineResponse2003.speed)) &&
+        (this.longitude == null ? inlineResponse2003.longitude == null : this.longitude.equals(inlineResponse2003.longitude));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (shiftState == null ? 0: shiftState.hashCode());
-    result = 31 * result + (heading == null ? 0: heading.hashCode());
-    result = 31 * result + (latitude == null ? 0: latitude.hashCode());
-    result = 31 * result + (speed == null ? 0: speed.hashCode());
-    result = 31 * result + (longitude == null ? 0: longitude.hashCode());
+    result = 31 * result + (this.shiftState == null ? 0: this.shiftState.hashCode());
+    result = 31 * result + (this.heading == null ? 0: this.heading.hashCode());
+    result = 31 * result + (this.latitude == null ? 0: this.latitude.hashCode());
+    result = 31 * result + (this.speed == null ? 0: this.speed.hashCode());
+    result = 31 * result + (this.longitude == null ? 0: this.longitude.hashCode());
     return result;
   }
 

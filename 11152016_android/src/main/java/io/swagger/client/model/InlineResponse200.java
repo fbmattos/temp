@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class InlineResponse200  {
+public class InlineResponse200 {
   
   @SerializedName("color")
   private String color = null;
@@ -91,19 +89,19 @@ public class InlineResponse200  {
       return false;
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return (color == null ? inlineResponse200.color == null : color.equals(inlineResponse200.color)) &&
-        (vin == null ? inlineResponse200.vin == null : vin.equals(inlineResponse200.vin)) &&
-        (displayName == null ? inlineResponse200.displayName == null : displayName.equals(inlineResponse200.displayName)) &&
-        (vehicleId == null ? inlineResponse200.vehicleId == null : vehicleId.equals(inlineResponse200.vehicleId));
+    return (this.color == null ? inlineResponse200.color == null : this.color.equals(inlineResponse200.color)) &&
+        (this.vin == null ? inlineResponse200.vin == null : this.vin.equals(inlineResponse200.vin)) &&
+        (this.displayName == null ? inlineResponse200.displayName == null : this.displayName.equals(inlineResponse200.displayName)) &&
+        (this.vehicleId == null ? inlineResponse200.vehicleId == null : this.vehicleId.equals(inlineResponse200.vehicleId));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (color == null ? 0: color.hashCode());
-    result = 31 * result + (vin == null ? 0: vin.hashCode());
-    result = 31 * result + (displayName == null ? 0: displayName.hashCode());
-    result = 31 * result + (vehicleId == null ? 0: vehicleId.hashCode());
+    result = 31 * result + (this.color == null ? 0: this.color.hashCode());
+    result = 31 * result + (this.vin == null ? 0: this.vin.hashCode());
+    result = 31 * result + (this.displayName == null ? 0: this.displayName.hashCode());
+    result = 31 * result + (this.vehicleId == null ? 0: this.vehicleId.hashCode());
     return result;
   }
 

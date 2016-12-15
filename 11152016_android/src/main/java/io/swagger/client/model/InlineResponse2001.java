@@ -24,13 +24,11 @@
 
 package io.swagger.client.model;
 
-
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-
 @ApiModel(description = "")
-public class InlineResponse2001  {
+public class InlineResponse2001 {
   
   @SerializedName("result")
   private Boolean result = null;
@@ -67,15 +65,15 @@ public class InlineResponse2001  {
       return false;
     }
     InlineResponse2001 inlineResponse2001 = (InlineResponse2001) o;
-    return (result == null ? inlineResponse2001.result == null : result.equals(inlineResponse2001.result)) &&
-        (reason == null ? inlineResponse2001.reason == null : reason.equals(inlineResponse2001.reason));
+    return (this.result == null ? inlineResponse2001.result == null : this.result.equals(inlineResponse2001.result)) &&
+        (this.reason == null ? inlineResponse2001.reason == null : this.reason.equals(inlineResponse2001.reason));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (result == null ? 0: result.hashCode());
-    result = 31 * result + (reason == null ? 0: reason.hashCode());
+    result = 31 * result + (this.result == null ? 0: this.result.hashCode());
+    result = 31 * result + (this.reason == null ? 0: this.reason.hashCode());
     return result;
   }
 

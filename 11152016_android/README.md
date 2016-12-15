@@ -84,9 +84,9 @@ All URIs are relative to *https://virtserver.swaggerhub.com/fbmattos/Tesla-Demo/
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**climateState**](docs/DefaultApi.md#climateState) | **GET** /vehicles/{id}/data_request/climate_state | 
-*DefaultApi* | [**driveState**](docs/DefaultApi.md#driveState) | **GET** /vehicles/{id}/data_request/drive_state | 
 *DefaultApi* | [**setTemps**](docs/DefaultApi.md#setTemps) | **POST** /vehicles/{id}/command/set_temps | 
 *DefaultApi* | [**vehicleGet**](docs/DefaultApi.md#vehicleGet) | **GET** /vehicle | 
+*DefaultApi* | [**vehiclesIdDataRequestDriveStateGet**](docs/DefaultApi.md#vehiclesIdDataRequestDriveStateGet) | **GET** /vehicles/{id}/data_request/drive_state | 
 
 
 ## Documentation for Models
@@ -104,7 +104,7 @@ Authentication schemes defined for the API:
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 
