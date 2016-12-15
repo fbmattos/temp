@@ -65,7 +65,7 @@ paths:
   /vehicles/{id}/data_request/drive_state:
     get:
       description: "Returns the driving and position state of the vehicle."
-      operationId: "drive_state"
+      operationId: "vehiclesIdData_requestDrive_stateGET"
       parameters:
       - name: "id"
         in: "path"
@@ -106,7 +106,7 @@ definitions:
       driver_temp_setting:
         type: "number"
         format: "double"
-        example: 22.6
+        example: 22.60000000000000142108547152020037174224853515625
         description: "degC of driver temperature setpoint"
       is_rear_defroster_on:
         type: "boolean"
@@ -122,12 +122,12 @@ definitions:
       inside_temp:
         type: "number"
         format: "double"
-        example: 17.0
+        example: 17
         description: "degC inside car"
       passenger_temp_setting:
         type: "number"
         format: "double"
-        example: 22.6
+        example: 22.60000000000000142108547152020037174224853515625
         description: "degC of passenger temperature setpoint"
       fan_status:
         type: "integer"
@@ -147,12 +147,12 @@ definitions:
         format: "int32"
         example: 6
         description: "integer compass heading"
-        minimum: 0.0
-        maximum: 359.0
+        minimum: 0
+        maximum: 359
       latitude:
         type: "number"
         format: "double"
-        example: 37.4292
+        example: 37.42920000000000158024704433046281337738037109375
         description: "degrees north of equator"
       speed:
         type: "number"
@@ -161,5 +161,5 @@ definitions:
       longitude:
         type: "number"
         format: "double"
-        example: 122.1381
+        example: 122.1380999999999943383954814635217189788818359375
         description: "degrees west of the prime meridian"
