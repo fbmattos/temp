@@ -5,9 +5,9 @@ All URIs are relative to *https://virtserver.swaggerhub.com/fbmattos/Tesla-Demo/
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**climateState**](DefaultApi.md#climateState) | **GET** /vehicles/{id}/data_request/climate_state | 
+[**driveState**](DefaultApi.md#driveState) | **GET** /vehicles/{id}/data_request/drive_state | 
 [**setTemps**](DefaultApi.md#setTemps) | **POST** /vehicles/{id}/command/set_temps | 
 [**vehicleGet**](DefaultApi.md#vehicleGet) | **GET** /vehicle | 
-[**vehiclesIdDataRequestDriveStateGet**](DefaultApi.md#vehiclesIdDataRequestDriveStateGet) | **GET** /vehicles/{id}/data_request/drive_state | 
 
 
 <a name="climateState"></a>
@@ -43,6 +43,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="driveState"></a>
+# **driveState**
+> InlineResponse2003 driveState(id)
+
+
+
+Returns the driving and position state of the vehicle.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.api.DefaultApi;
+
+DefaultApi apiInstance = new DefaultApi();
+String id = "id_example"; // String | The ID number of the car
+try {
+    InlineResponse2003 result = apiInstance.driveState(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#driveState");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The ID number of the car |
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -129,49 +172,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="vehiclesIdDataRequestDriveStateGet"></a>
-# **vehiclesIdDataRequestDriveStateGet**
-> InlineResponse2003 vehiclesIdDataRequestDriveStateGet(id)
-
-
-
-Returns the driving and position state of the vehicle.
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.api.DefaultApi;
-
-DefaultApi apiInstance = new DefaultApi();
-String id = "id_example"; // String | The ID number of the car
-try {
-    InlineResponse2003 result = apiInstance.vehiclesIdDataRequestDriveStateGet(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#vehiclesIdDataRequestDriveStateGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The ID number of the car |
-
-### Return type
-
-[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
