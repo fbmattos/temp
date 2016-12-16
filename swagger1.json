@@ -1,0 +1,435 @@
+{
+  "definitions" : {
+    "LoginSuccess" : {
+      "properties" : {
+        "access_token" : {
+          "type" : "string",
+          "example" : "abc1234"
+        },
+        "token_type" : {
+          "type" : "string",
+          "example" : "bearer"
+        },
+        "expires_in" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 7776000
+        },
+        "created_at" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 1457385291
+        }
+      }
+    },
+    "LoginFailure" : {
+      "properties" : {
+        "status" : {
+          "type" : "boolean"
+        },
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Boolean" : {
+      "properties" : {
+        "result" : {
+          "type" : "boolean",
+          "example" : true
+        },
+        "reason" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BooleanResponse" : {
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/Boolean"
+        }
+      }
+    },
+    "Vehicle" : {
+      "properties" : {
+        "color" : {
+          "type" : "string",
+          "example" : "Red"
+        },
+        "display_name" : {
+          "type" : "string",
+          "example" : "Tony's Model S"
+        },
+        "vehicle_id" : {
+          "type" : "string",
+          "example" : "1234567890"
+        },
+        "user_id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 123
+        },
+        "state" : {
+          "type" : "string",
+          "example" : "online"
+        },
+        "tokens" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "vin" : {
+          "type" : "string",
+          "example" : "5YJSA1CN5CFP01657"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 321
+        },
+        "option_codes" : {
+          "type" : "string",
+          "description" : "comma-separated list of options",
+          "example" : "MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013"
+        }
+      }
+    },
+    "VehiclesResponse" : {
+      "properties" : {
+        "response" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Vehicle"
+          }
+        },
+        "count" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "ChargeState" : {
+      "properties" : {
+        "ideal_battery_range" : {
+          "description" : "ideal miles",
+          "type" : "number",
+          "format" : "double",
+          "example" : 275.09
+        },
+        "charging_state" : {
+          "type" : "string",
+          "example" : "Complete"
+        },
+        "charger_power" : {
+          "description" : "kW (rounded down) of charger",
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "battery_current" : {
+          "description" : "current flowing into battery",
+          "type" : "number",
+          "format" : "double",
+          "example" : -0.6
+        },
+        "charge_port_door_open" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "charge_starting_range" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "charge_to_max_range" : {
+          "type" : "boolean"
+        },
+        "charger_actual_current" : {
+          "description" : "current actually being drawn",
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "battery_range" : {
+          "description" : "rated miles",
+          "type" : "number",
+          "format" : "double",
+          "example" : 239.02
+        },
+        "charge_rate" : {
+          "description" : "mi/hr if charging or -1 if not charging",
+          "type" : "number",
+          "format" : "double",
+          "example" : -1
+        },
+        "max_range_charge_counter" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "charger_pilot_current" : {
+          "description" : "max current allowed by charger & adapter",
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 40
+        },
+        "est_battery_range" : {
+          "description" : "range estimated from recent driving",
+          "type" : "number",
+          "format" : "double",
+          "example" : 155.79
+        },
+        "time_to_full_charge" : {
+          "description" : "only present while charging",
+          "type" : "number",
+          "format" : "double"
+        },
+        "battery_level" : {
+          "description" : "charge percentage",
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 91
+        },
+        "charge_starting_soc" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "fast_charger_present" : {
+          "type" : "boolean",
+          "description" : "connected to Supercharger?"
+        },
+        "charger_voltage" : {
+          "description" : "voltage present only while charging",
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "ChargeStateResponse" : {
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/ChargeState"
+        }
+      }
+    },
+    "ClimateState" : {
+      "properties" : {
+        "inside_temp" : {
+          "description" : "degC inside car",
+          "type" : "number",
+          "format" : "double",
+          "example" : 17
+        },
+        "outside_temp" : {
+          "description" : "degC outside car or null",
+          "type" : "number",
+          "format" : "double",
+          "example" : 9.5
+        },
+        "driver_temp_setting" : {
+          "description" : "degC of driver temperature setpoint",
+          "type" : "number",
+          "format" : "double",
+          "example" : 22.6
+        },
+        "passenger_temp_setting" : {
+          "description" : "degC of passenger temperature setpoint",
+          "type" : "number",
+          "format" : "double",
+          "example" : 22.6
+        },
+        "is_auto_conditioning_on" : {
+          "type" : "boolean",
+          "example" : false
+        },
+        "is_front_defroster_on" : {
+          "type" : "boolean",
+          "example" : false
+        },
+        "is_rear_defroster_on" : {
+          "type" : "boolean",
+          "example" : false
+        },
+        "fan_status" : {
+          "description" : "fan speed 0-6 or null",
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 3
+        }
+      }
+    },
+    "ClimateStateResponse" : {
+      "properties" : {
+        "result" : {
+          "$ref" : "#/definitions/ClimateState"
+        }
+      }
+    },
+    "DriveState" : {
+      "properties" : {
+        "shift_state" : {
+          "type" : "string",
+          "example" : "sport"
+        },
+        "speed" : {
+          "type" : "number",
+          "format" : "double",
+          "example" : 94.5
+        },
+        "latitude" : {
+          "description" : "degrees north of equator",
+          "type" : "number",
+          "format" : "double",
+          "example" : 37.4292
+        },
+        "longitude" : {
+          "description" : "degrees west of the prime meridian",
+          "type" : "number",
+          "format" : "double",
+          "example" : 122.1381
+        },
+        "heading" : {
+          "description" : "integer compass heading",
+          "type" : "integer",
+          "format" : "int32",
+          "minimum" : 0,
+          "maximum" : 359,
+          "example" : 6
+        },
+        "gps_as_of" : {
+          "description" : "unix timestamp of gps fix",
+          "example" : "1359865301"
+        }
+      }
+    },
+    "DriveStateResponse" : {
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/DriveState"
+        }
+      }
+    },
+    "GuiState" : {
+      "properties" : {
+        "gui_distance_units" : {
+          "type" : "string",
+          "example" : "mi/hr"
+        },
+        "gui_temperature_units" : {
+          "type" : "string",
+          "example" : "F"
+        },
+        "gui_charge_rate_units" : {
+          "type" : "string",
+          "example" : "mi/hr"
+        },
+        "gui_24_hour_time" : {
+          "type" : "boolean",
+          "example" : false
+        },
+        "gui_range_display" : {
+          "type" : "string",
+          "example" : "Rated"
+        }
+      }
+    },
+    "GuiStateResponse" : {
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/GuiState"
+        }
+      }
+    },
+    "VehicleState" : {
+      "properties" : {
+        "sun_roof_installed" : {
+          "description" : "panoramic roof is installed",
+          "type" : "boolean",
+          "example" : true
+        },
+        "df" : {
+          "description" : "driver's side front door open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "pr" : {
+          "description" : "passenger's side rear door open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "rt" : {
+          "description" : "rear trunk is open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "dark_rims" : {
+          "description" : "gray rims installed",
+          "type" : "boolean",
+          "example" : true
+        },
+        "locked" : {
+          "description" : "car is locked",
+          "type" : "boolean",
+          "example" : true
+        },
+        "dr" : {
+          "description" : "driver's side rear door open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "ft" : {
+          "description" : "front trunk is open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "pf" : {
+          "description" : "passenger's side front door open",
+          "type" : "boolean",
+          "example" : false
+        },
+        "roof_color" : {
+          "description" : "None for panoramic roof",
+          "type" : "string",
+          "example" : "None"
+        },
+        "perf_config" : {
+          "type" : "string",
+          "example" : "Base"
+        },
+        "sun_roof_state" : {
+          "type" : "string",
+          "example" : "open"
+        },
+        "car_version" : {
+          "description" : "car firmware version",
+          "type" : "string",
+          "example" : "1.19.42"
+        },
+        "sun_roof_percent_open" : {
+          "description" : "null if not installed",
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 40
+        },
+        "has_spoiler" : {
+          "description" : "spoiler is installed",
+          "type" : "boolean",
+          "example" : true
+        },
+        "wheel_type" : {
+          "description" : "wheel type installed",
+          "type" : "string",
+          "example" : "Base19"
+        }
+      }
+    },
+    "VehicleStateResponse" : {
+      "properties" : {
+        "response" : {
+          "$ref" : "#/definitions/VehicleState"
+        }
+      }
+    }
+  }
+}
