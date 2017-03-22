@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPet**](PetApi.md#addPet) | **POST** /pet | Add a new pet to the store
 [**deletePet**](PetApi.md#deletePet) | **DELETE** /pet/{petId} | Deletes a pet
-[**findPetsByStatus**](PetApi.md#findPetsByStatus) | **GET** /pet/findByStatus | Finds Pets by status
+[**findPetsByStatus**](PetApi.md#findPetsByStatus) | **GET** /pet/findByStatus | Finds Pets by status 2
 [**findPetsByTags**](PetApi.md#findPetsByTags) | **GET** /pet/findByTags | Finds Pets by tags
 [**getPetById**](PetApi.md#getPetById) | **GET** /pet/{petId} | Find pet by ID
 [**updatePet**](PetApi.md#updatePet) | **PUT** /pet | Update an existing pet
@@ -104,7 +104,7 @@ null (empty response body)
 # **findPetsByStatus**
 > List&lt;Pet&gt; findPetsByStatus(status)
 
-Finds Pets by status
+Finds Pets by status 2
 
 Multiple status values can be provided with comma separated strings
 

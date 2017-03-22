@@ -339,7 +339,7 @@ public class PetApi {
     }
   }
   /**
-  * Finds Pets by status
+  * Finds Pets by status 2
   * Multiple status values can be provided with comma separated strings
    * @param status Status values that need to be considered for filter
    * @return List<Pet>
@@ -410,7 +410,7 @@ public class PetApi {
   }
 
       /**
-   * Finds Pets by status
+   * Finds Pets by status 2
    * Multiple status values can be provided with comma separated strings
    * @param status Status values that need to be considered for filter
   */
