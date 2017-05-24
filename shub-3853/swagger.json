@@ -1,0 +1,32 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "SHUB-3853 bug",
+    "version" : "1.0.0",
+    "title" : "SHUB-3853 bug"
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/swaggerhub-support/SHUB-3853/1.0.0",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/inventory" : {
+      "get" : {
+        "summary" : "searches inventory test",
+        "operationId" : "searchInventory",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria"
+          },
+          "default" : {
+            "description" : "General Error",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}
